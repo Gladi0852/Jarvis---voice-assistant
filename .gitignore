@@ -15,3 +15,5 @@ __pycache__/
 Thumbs.db
 
 temp.mp3
+
+.gitignore
