@@ -18,7 +18,7 @@ if __name__ == "__main__":
         audio = recognizer.listen(source, timeout=2)
       # recognize speech using google speech recognition
       word = recognizer.recognize_google(audio)
-      if word.lower() == "hey jarvis":
+      if word.lower() == "hey jarvis" or "jarvis" in word.lower():
         speak(" yes boss, what is it?")
         print("waked up...")
         while count<3:
@@ -28,6 +28,7 @@ if __name__ == "__main__":
               audio = recognizer.listen(source)
             command = recognizer.recognize_google(audio)
             count = 0
+            print(command)
             processCommand(command)
           except Exception as e:
             count+=1

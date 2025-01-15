@@ -3,10 +3,10 @@ import webbrowser #we can open any link on browser
 import musicLibrary
 from newsFunc import fetchNews
 from geminiAi import geminiAi
+from SearchOnYutube import searchOnYoutube
 
 
 def processCommand(command):
-  print(command)
   if "open" in command.lower() and "google" in command.lower():
     speak("opening Google")
     webbrowser.open("https://www.google.com")
@@ -23,5 +23,10 @@ def processCommand(command):
     speak(" on which topic?")
     fetchNews()
 
+  elif "search" in command.lower():
+    speak(" what you want to search?")
+    searchOnYoutube()
+
   else:
-    geminiAi(command)
+    # geminiAi(command)
+    pass
